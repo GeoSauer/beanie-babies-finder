@@ -1,5 +1,8 @@
 /* Imports */
+import { getBeanies } from './fetch-utils.js';
 
+import { renderAstroSignOption } from './render-utils.js';
+import { renderBeanie } from './render-utils.js';
 /* Get DOM Elements */
 
 /* State */
