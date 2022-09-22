@@ -13,7 +13,7 @@ const searchForm = document.getElementById('search-form');
 
 /* State */
 let error = null;
-// let count = 0;
+let count = 0;
 let beanies = [];
 let astroSigns = [];
 
@@ -35,7 +35,7 @@ async function findBeanies(name, astroSign) {
     const response = await getBeanies(name, astroSign);
 
     error = response.error;
-    // count = response.count;
+    count = response.count;
     beanies = response.data;
 
     displayNotifications();
@@ -66,6 +66,7 @@ function displayNotifications() {
         notificationDisplay.textContent = error.message;
     } else {
         notificationDisplay.classList.remove('error');
+        notificationDisplay.textContent = `Showing ${beanies.length} of ${count} found beanies.`;
     }
 }
 
